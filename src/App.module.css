@@ -1,0 +1,10 @@
+.boxApp {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 50px;
+    border: 1px solid green;
+    width: 100%;
+    min-height: 100vh;
+}
+

@@ -1,0 +1,19 @@
+.boxCharacters {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 35px;
+}
+
+.boxTitle {
+    text-align: center;
+    align-content: center;
+}
+
+.charactersList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
