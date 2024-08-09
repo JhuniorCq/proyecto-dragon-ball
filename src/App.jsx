@@ -1,9 +1,10 @@
-import styles from './App.module.css'
+// import styles from './App.module.css'
+import './App.css'
 import { MyRoutes } from './routes/MyRoutes'
 
 function App () {
   return (
-    <div className={styles.boxApp}>
+    <div className='app'>
       <MyRoutes />
     </div>
   )

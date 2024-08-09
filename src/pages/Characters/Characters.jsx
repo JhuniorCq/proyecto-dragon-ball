@@ -1,16 +1,25 @@
+import { useState } from 'react'
 import { useGet } from '../../hooks/useGet'
 import { URL_CHARACTERS } from '../../utilities/constants'
 import styles from './Characters.module.css'
 import { CharacterCard } from './components/CharacterCard.jsx/CharacterCard'
 
 export const Characters = () => {
-  const { responseGet, loadingGet, errorGet } = useGet(URL_CHARACTERS)
-  const charactersList = responseGet.items
+  const [url, setUrl] = useState(URL_CHARACTERS)
+  const { responseGet, loadingGet, errorGet } = useGet(url)
 
   return (
     <div className={styles.boxCharacters}>
       <div className={styles.boxTitle}>
         <h1>PERSONAJES</h1>
+      </div>
+      <div>
+        <button onClick={() => setUrl(responseGet.links.previous)}>
+          Antes
+        </button>
+        <button onClick={() => setUrl(responseGet.links.next)}>
+          Siguiente
+        </button>
       </div>
       <div className={styles.charactersList}>
         {loadingGet
@@ -22,8 +31,8 @@ export const Characters = () => {
               <div>Error :v</div>
               )
             : (
-                charactersList &&
-          charactersList.map((character) => (
+                responseGet.items &&
+          responseGet.items.map((character) => (
             <CharacterCard
               key={character.id}
               name={character.name}
