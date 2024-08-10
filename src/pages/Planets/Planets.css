@@ -1,4 +1,4 @@
-.boxPlanets {
+.box-planets {
     width: 100%;
     padding: 50px;
     display: flex;
@@ -6,9 +6,15 @@
     justify-content: center;
     align-items: center;
     gap: 35px;
+    background-color: rgb(207, 207, 207);
 }
 
-.planetsList {
+.box-planets__box-title {
+    text-align: center;
+    align-content: center;
+}
+
+.box-planets__list {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,7 +1,17 @@
+:root {
+    --color-red: rgb(134, 31, 31);
+    --color-green: #149009;
+    --color-hover-green: #007c00;
+    --color-steel: #102435;
+    --color-hover-steel: #0b1d2c;
+    --font-montserrat: "Montserrat", sans-serif;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: var(--font-montserrat);
 }
 
 a {

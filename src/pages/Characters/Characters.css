@@ -1,16 +1,17 @@
-.boxCharacters {
+.box-characters {
     display: flex;
     flex-direction: column;
     padding: 50px;
     gap: 35px;
+    background-color: rgb(207, 207, 207);
 }
 
-.boxTitle {
+.box-characters__box-title {
     text-align: center;
     align-content: center;
 }
 
-.charactersList {
+.box-characters__list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

@@ -1,0 +1,14 @@
+.box-controls {
+    width: 100%;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.box-control__button {
+    color: var(--color-red);
+    font-size: 2.2rem;
+    cursor: pointer;
+}

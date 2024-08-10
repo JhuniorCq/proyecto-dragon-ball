@@ -1,27 +1,26 @@
 import { useState } from 'react'
 import { useGet } from '../../hooks/useGet'
-import { URL_CHARACTERS } from '../../utilities/constants'
-import styles from './Characters.module.css'
+import { SEARCH_TYPES, URL_CHARACTERS } from '../../utilities/constants'
+import './Characters.css'
 import { CharacterCard } from './components/CharacterCard.jsx/CharacterCard'
+import { ControlButtons } from '../../components/ControlButtons/ControlButtons'
+import { Search } from '../../components/Search/Search'
 
 export const Characters = () => {
   const [url, setUrl] = useState(URL_CHARACTERS)
   const { responseGet, loadingGet, errorGet } = useGet(url)
 
   return (
-    <div className={styles.boxCharacters}>
-      <div className={styles.boxTitle}>
+    <div className='box-characters'>
+      <div className='box-characters__box-title'>
         <h1>PERSONAJES</h1>
       </div>
-      <div>
-        <button onClick={() => setUrl(responseGet.links.previous)}>
-          Antes
-        </button>
-        <button onClick={() => setUrl(responseGet.links.next)}>
-          Siguiente
-        </button>
-      </div>
-      <div className={styles.charactersList}>
+
+      <Search searchType={SEARCH_TYPES.characters} />
+
+      <ControlButtons back={() => setUrl(responseGet.links.previous)} next={() => setUrl(responseGet.links.next)} />
+
+      <div className='box-characters__list'>
         {loadingGet
           ? (
             <div>Cargando :,v</div>
