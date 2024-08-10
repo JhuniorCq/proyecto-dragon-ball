@@ -34,8 +34,8 @@ export const Characters = () => {
           responseGet.items.map((character) => (
             <CharacterCard
               key={character.id}
+              id={character.id}
               name={character.name}
-              description={character.description}
               image={character.image}
             />
           ))

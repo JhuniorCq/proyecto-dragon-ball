@@ -1,14 +1,14 @@
-import styles from './CharacterCard.module.css'
-export const CharacterCard = ({ name, description, image }) => {
+import { Link } from 'react-router-dom'
+import './CharacterCard.css'
+export const CharacterCard = ({ id, name, image }) => {
   return (
-    <div className={styles.boxCharacterCard}>
-      <div className={styles.boxImage}>
+    <Link className='character-card' to={`/characters/${id}`}>
+      <div className='character-card__box-image'>
         <img src={image} alt={name} />
       </div>
-      <div className={styles.boxText}>
+      <div className='character-card__box-name'>
         <h2>{name}</h2>
-        {/* <p>{description}</p> */}
       </div>
-    </div>
+    </Link>
   )
 }
